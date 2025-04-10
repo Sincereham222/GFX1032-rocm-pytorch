@@ -144,7 +144,3 @@ Set up ComfyUI and point it at your ROCm-enabled PyTorch. Test a flow to ensure 
 
 - This build excludes CUDA, XNNPACK, NCCL, and FlashAttention.
 - gfx1032 support is limited upstream; you may need to recompile as patches are merged.
-
----
-
-Let me know if anything needs correction or clarification!
