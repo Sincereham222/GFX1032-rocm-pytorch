@@ -1,7 +1,9 @@
 # GFX1032-rocm-pytorch
-# Building PyTorch from Source with ROCm (gfx1032) on Kubuntu 24.10
+# Building PyTorch from Source with ROCm (gfx1032) on Ubuntu-based Distros
 
 This guide walks through how to build PyTorch with ROCm support from source, targeting `gfx1032` (e.g. RX 6600 XT, RX 6650 XT) on **Kubuntu 24.10**, using **kernel 6.11.0-21-generic**.
+
+> 🟢 This method **SHOULD** for any Ubuntu **24.04+** base (including Kubuntu, Xubuntu, Pop!_OS, etc.)
 
 ---
 
@@ -10,8 +12,8 @@ This guide walks through how to build PyTorch with ROCm support from source, tar
 - **OS**: Kubuntu 24.10 (Ubuntu base)
 - **Kernel**: 6.11.0-21-generic
 - **GPU**: AMD RX 6650 XT (gfx1032)
-- **ROCm Version**: 6.3.0
-- **Python**: 3.10
+- **ROCm Version**: 6.3.2
+- **Python**: 3.12
 - **PyTorch Version**: 2.8.0a0 (latest nightly as of build)
 
 ---
@@ -39,9 +41,9 @@ pip install --upgrade pip
 
 ---
 
-## 2. Install ROCm 6.3
+## 2. Install ROCm 6.3.2
 
-Follow the official AMD instructions to install ROCm 6.3 for Ubuntu 24.04 — it works fine for 24.10.
+Follow the official AMD instructions to install ROCm 6.3.2 for Ubuntu 24.04 — it works fine for 24.10 and other Ubuntu derivatives.
 
 Set ROCm paths in your environment (append to `~/.bashrc` or `~/.zshrc`):
 
@@ -144,3 +146,4 @@ Set up ComfyUI and point it at your ROCm-enabled PyTorch. Test a flow to ensure 
 
 - This build excludes CUDA, XNNPACK, NCCL, and FlashAttention.
 - gfx1032 support is limited upstream; you may need to recompile as patches are merged.
+- The steps here work with any Ubuntu-based distro — adjust only for minor package naming differences.
